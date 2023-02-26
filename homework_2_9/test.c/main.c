@@ -42,13 +42,16 @@
 //int main()
 //{
 //	int year = 0;
+//	int count = 0;
 //	for (year = 1000; year <= 2000; year++)
 //	{
 //		if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
 //		{
 //			printf("%d ", year);
+//			count++;
 //		}
 //	}
+//	printf("\ncount = %d\n", count);
 //
 //	return 0;
 //}
@@ -218,20 +221,131 @@
 //	return 0;
 //}
 
-int main()
-{
-	int i = 0;
-	int count = 0;
-	for (i = 1; i <= 100; i++)
-	{
-		if (((i + 1) % 10 == 0) || (i + 1) / 10 == 1)
-		{
-			count++;
-		}
-	}
-	printf("数字9的个数:%d", count);
+//int main()
+//{
+//	int i = 0;
+//	int count = 0;
+//	for (i = 1; i <= 100; i++)
+//	{
+//		if (((i + 1) % 10 == 0) || (i + 1) / 10 == 1)
+//		{
+//			count++;
+//		}
+//	}
+//	printf("数字9的个数:%d", count);
+//
+//	return 0;
+//}
 
-	return 0;
-}
+////法一:最大公约数
+//int main()
+//{
+//	int m = 0;
+//	int n = 0;
+//	int i = 0;
+//	int max = 0;
+//	scanf("%d%d", &m, &n);
+//	//假设最大公约数max就是m和n的较小值
+//	if (m > n)
+//	{
+//		max = n;
+//	}
+//	else
+//	{
+//		max = m;
+//	}
+//	for (i = max; i >= 1; i--)
+//	{
+//		if (m % i == 0 && n % i == 0)
+//		{
+//			printf("最大公约数:%d\n", i);
+//			break;
+//		}
+//	}
+//
+//	return 0;
+//}
 
+////法二:辗转相除法
+//int main()
+//{
+//	int m = 0;
+//	int n = 0;
+//	int t = 0;
+//	scanf("%d%d", &m, &n);
+//	if (m == n)
+//	{
+//		printf("最大公约数:> %d\n", m);
+//	}
+//	else
+//	{
+//		while (m % n)
+//		{
+//			t = m % n;
+//			m = n;
+//			n = t;
+//		}
+//		printf("最大公约数:> %d\n", t);
+//	}
+//
+//	return 0;
+//}
+
+//写一个代码：打印100~200之间的素数
+// 法一
+//int main()
+//{
+//	int i = 0;
+//	for (i = 100; i <= 200; i++)
+//	{
+//		//判断i是否为素数
+//		//2 -> i-1之间的数字去试除i，看能否被整除
+//		int j = 0;
+//		for (j = 2; j < i; j++)
+//		{
+//			if (i % j == 0)
+//			{
+//				break;
+//			}
+//		}
+//		if (i == j)
+//		{
+//			printf("%d ", i);
+//		}
+//	}
+//
+//	return 0;
+//}
+
+//法二
+//#include <math.h>
+//int main()
+//{
+//	int i = 0;
+//	int count = 0;
+//	//sqrt - 开平方函数 - 头文件 math.h
+//	for (i = 101; i <= 200; i += 2)
+//	{
+//		//判断i是否为素数
+//		//2 -> i-1之间的数字去试除i，看能否被整除
+//		int j = 0;
+//		int flag = 1;//假设i就是素数
+//		for (j = 2; j <= sqrt(i); j++)
+//		{
+//			if (i % j == 0)
+//			{
+//				flag = 0;//i不是素数
+//				break;
+//			}
+//		}
+//		if (flag == 1)
+//		{
+//			count++;
+//			printf("%d ", i);
+//		}
+//	}
+//	printf("\ncount = %d\n", count);
+//
+//	return 0;
+//}
 
