@@ -351,64 +351,178 @@
 
 //猜数字游戏 - 复习
 
-#include <stdlib.h>
-#include <time.h>
+//#include <stdlib.h>
+//#include <time.h>
+//
+//void menu()
+//{
+//	printf("******************\n");
+//	printf("******1.play******\n");
+//	printf("******0.exit******\n");
+//	printf("******************\n");
+//}
+//
+//void game()
+//{
+//	int key = rand() % 100 + 1;
+//	int guess = 0;
+//	while (1)
+//	{
+//		printf("请输入:>");
+//		scanf("%d", &guess);
+//		if (guess < key)
+//		{
+//			printf("猜小了！\n");
+//		}
+//		else if (guess > key)
+//		{
+//			printf("猜大了！\n");
+//		}
+//		else
+//		{
+//			printf("猜对了！\n");
+//			break;
+//		}
+//	}
+//}
+//
+//int main()
+//{
+//	int input = 0;
+//	srand((unsigned int)time(NULL));
+//	do
+//	{
+//		menu();
+//		printf("请选择:>");
+//		scanf("%d", &input);
+//		switch (input)
+//		{
+//		case 1:
+//			//printf("开始猜数游戏\n");
+//			game();
+//			break;
+//		case 0:
+//			printf("游戏已退出，请重新运行游戏\n");
+//			break;
+//		default:
+//			printf("输入不合法，请重新输入\n");
+//		}
+//	} while (input);
+//
+//	return 0;
+//}
 
-void menu()
-{
-	printf("******************\n");
-	printf("******1.play******\n");
-	printf("******0.exit******\n");
-	printf("******************\n");
-}
+//#include <math.h>
+//
+//int is_prime(int n)
+//{
+//	int j = 0;
+//	for (j = 2; j <= sqrt(n); j++)
+//	{
+//		if (n % j == 0)
+//		{
+//			return 0;
+//		}
+//	}
+//	return 1;
+//}
+//
+//int main()
+//{
+//	int i = 0;
+//	int count = 0;
+//	for (i = 100; i <= 200; i++)
+//	{
+//		if (is_prime(i) == 1)
+//		{
+//			count++;
+//			printf("%d ", i);
+//		}
+//	}
+//	printf("\ncount = %d\n", count);
+//
+//	return 0;
+//}
 
-void game()
-{
-	int key = rand() % 100 + 1;
-	int guess = 0;
-	while (1)
-	{
-		printf("请输入:>");
-		scanf("%d", &guess);
-		if (guess < key)
-		{
-			printf("猜小了！\n");
-		}
-		else if (guess > key)
-		{
-			printf("猜大了！\n");
-		}
-		else
-		{
-			printf("猜对了！\n");
-			break;
-		}
-	}
-}
 
-int main()
-{
-	int input = 0;
-	srand((unsigned int)time(NULL));
-	do
-	{
-		menu();
-		printf("请选择:>");
-		scanf("%d", &input);
-		switch (input)
-		{
-		case 1:
-			//printf("开始猜数游戏\n");
-			game();
-			break;
-		case 0:
-			printf("游戏已退出，请重新运行游戏\n");
-			break;
-		default:
-			printf("输入不合法，请重新输入\n");
-		}
-	} while (input);
+//实现函数判断year是不是润年。
+//int is_leap_year(int y)
+//{
+//	if ((y % 4 == 0 && y % 100 != 0) || (y % 400 == 0))
+//	{
+//		return 1;
+//	}
+//	else
+//	{
+//		return 0;
+//	}
+//}
+//
+//int main()
+//{
+//	int year = 0;
+//	scanf("%d", &year);
+//	if (is_leap_year(year) == 1)
+//	{
+//		printf("%d是闰年\n", year);
+//	}
+//	else
+//	{
+//		printf("%d不是闰年\n", year);
+//	}
+//
+//	return 0;
+//}
 
-	return 0;
-}
+
+//实现一个函数来交换两个整数的内容。
+//void Swap(int* x, int* y)
+//{
+//	int z = 0;
+//	z = *x;
+//	*x = *y;
+//	*y = z;
+//}
+//
+//int main()
+//{
+//	int a = 0;
+//	int b = 0;
+//
+//	scanf("%d%d", &a, &b);
+//	Swap(&a, &b);
+//
+//	printf("a = %d b = %d", a, b);
+//
+//	return 0;
+//}
+
+
+//实现一个函数，打印乘法口诀表，口诀表的行数和列数自己指定
+//如：输入9，输出9 * 9口诀表，输出12，输出12 * 12的乘法口诀表。
+
+//void print_multiplication(int x)
+//{
+//	int i = 0;
+//	int j = 0;
+//	for (i = 1; i <= x; i++)
+//	{
+//		for (j = 1; j <= i; j++)
+//		{
+//			printf("%d * %d = %d  ", i, j, i * j);
+//		}
+//		printf("\n");
+//	}
+//
+//}
+//
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	print_multiplication(n);
+//
+//	return 0;
+//}
+
 
