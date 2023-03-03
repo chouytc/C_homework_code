@@ -615,21 +615,257 @@
 //3*1=3 3*2=6 3*3=9
 //...
 
+//int main()
+//{
+//	int i = 0;
+//	//行数
+//	for (i = 1; i <= 9; i++)
+//	{
+//		//打印一行
+//		int j = 0;
+//		for (j = 1; j <= i; j++)
+//		{
+//			printf("%d*%d= %-               2d ", i, j, i * j);
+//		}
+//		printf("\n");
+//	}
+//
+//	return 0;
+//}
+
+
+//递归方式实现打印一个整数的每一位
+//void print_num(int n)
+//{
+//	if (n < 10)
+//	{
+//		printf("%d ", n);
+//	}
+//	else
+//	{
+//		print_num(n / 10);
+//		printf("%d ", n % 10);
+//	}
+//}
+//
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	
+//	print_num(n);
+//
+//	return 0;
+//}
+
+
+
+//递归和非递归分别实现求n的阶乘（不考虑溢出的问题）
+//非递归
+//int main()
+//{
+//	int n = 0;
+//	int i = 0;
+//	int ret = 1;
+//	scanf("%d", &n);
+//	for (i = n; i >= 1; i--)
+//	{
+//		ret *= i;
+//	}
+//
+//	printf("%d! = %d\n", n, ret);
+//
+//	return 0;
+//}
+
+//递归
+//int Factorial(int n)
+//{
+//	if (n > 1)
+//	{
+//		return n * Factorial(n - 1);
+//	}
+//	else
+//	{
+//		return 1;
+//	}
+//}
+//
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int ret = Factorial(n);
+//
+//	printf("%d! = %d\n", n, ret);
+//
+//	return 0;
+//}
+
+
+
+//递归和非递归分别实现strlen
+//非递归
+//int main()
+//{
+//	char arr[] = "hello bit";
+//	int len = 0;
+//	char* parr = arr;
+//	while (*parr != '\0')
+//	{
+//		len++;
+//		parr++;
+//	}
+//	printf("len = %d", len);
+//
+//	return 0;
+//}
+
+//递归
+//int my_strlen(char* arr)
+//{
+//	while (*arr != '\0')
+//	{
+//		return 1 + my_strlen(arr + 1);
+//	}
+//}
+//
+//int main()
+//{
+//	char arr[] = "hello bit";//长度为9
+//	int len = my_strlen(arr);
+//
+//	printf("len = %d", len);
+//
+//	return 0;
+//}
+
+
+//编写一个函数 reverse_string(char* string)（递归实现）
+//实现：将参数字符串中的字符反向排列，不是逆序打印。
+//要求：不能使用C函数库中的字符串操作函数。(未实现版本)
+//void reverse_string(char* arr)
+//{
+//	if (*arr != '\0')
+//	{
+//		reverse_string(arr + 1);
+//		printf("%c", *arr);
+//	}
+//}
+//
+//int main()
+//{
+//	char arr[] = "abcdef";
+//	reverse_string(arr);
+//
+//	return 0;
+//}
+
+
+
+//写一个递归函数DigitSum(n)，输入一个非负整数，返回组成它的数字之和
+//int DigitSum(long long n)
+//{
+//	if (n > 9)
+//	{
+//		return DigitSum(n / 10) + n % 10;
+//	}
+//	else
+//	{
+//		return n;
+//	}
+//}
+//
+//int main()
+//{
+//	long long n = 0;
+//	scanf("%lld", &n);
+//	int sum = DigitSum(n);
+//
+//	printf("%d", sum);
+//
+//	return 0;
+//}
+
+
+
+
+//编写一个函数实现n的k次方，使用递归实现。
+//int my_pow(int n, int k)
+//{
+//	if (k > 0)
+//	{
+//		return n * my_pow(n, k - 1);
+//	}
+//}
+//
+//int main()
+//{
+//	int n = 0;
+//	int k = 0;
+//	scanf("%d%d", &n, &k);
+//
+//	int ret = my_pow(n, k);
+//	printf("pow(%d,%d) = %d", n, k, ret);
+//
+//	return 0;
+//}
+
+
+
+
+//递归和非递归分别实现求第n个斐波那契数
+// 输入：5  输出：5
+//输入：10， 输出：55
+//输入：2， 输出：1
+//递归
+//int Fib(int n)
+//{
+//	if (n < 3)
+//	{
+//		return 1;
+//	}
+//	else
+//	{
+//		return Fib(n - 1) + Fib(n - 2);
+//	}
+//}
+//
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//
+//	int ret = Fib(n);
+//
+//	printf("%d", ret);
+//
+//	return 0;
+//}
+
+//非递归
+int Fib(int n)
+{
+	int a = 1;
+	int b = 1;
+	int c = 1;
+	while (n > 2)
+	{
+		a = b;
+		b = c;
+		c = a + b;
+		n--;
+	}
+	return c;
+}
+
 int main()
 {
-	int i = 0;
-	//行数
-	for (i = 1; i <= 9; i++)
-	{
-		//打印一行
-		int j = 0;
-		for (j = 1; j <= i; j++)
-		{
-			printf("%d*%d= %-2d ", i, j, i * j);
-		}
-		printf("\n");
-	}
+	int n = 0;
+	scanf("%d", &n);
+	int ret = Fib(n);
+
+	printf("%d", ret);
 
 	return 0;
 }
-
