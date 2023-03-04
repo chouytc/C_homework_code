@@ -844,28 +844,188 @@
 //}
 
 //非递归
-int Fib(int n)
-{
-	int a = 1;
-	int b = 1;
-	int c = 1;
-	while (n > 2)
-	{
-		a = b;
-		b = c;
-		c = a + b;
-		n--;
-	}
-	return c;
-}
+//int Fib(int n)
+//{
+//	int a = 1;
+//	int b = 1;
+//	int c = 1;
+//	while (n > 2)
+//	{
+//		a = b;
+//		b = c;
+//		c = a + b;
+//		n--;
+//	}
+//	return c;
+//}
+//
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int ret = Fib(n);
+//
+//	printf("%d", ret);
+//
+//	return 0;
+//}
 
-int main()
-{
-	int n = 0;
-	scanf("%d", &n);
-	int ret = Fib(n);
+//test()
+//{
+//	return 1, 2;
+//}
+//
+//int main()
+//{
+//	printf("%d", test());
+//
+//	return 0;
+//}
 
-	printf("%d", ret);
 
-	return 0;
-}
+
+//int Fun(int n)
+//{
+//    if (n == 5)
+//        return 2;
+//    else
+//        return 2 * Fun(n + 1);
+//}
+//
+//int main()
+//{
+//    printf("%d", Fun(2));
+//
+//    return 0;
+//}
+
+
+
+//字符串逆序（递归实现）
+//非递归
+//int my_strlen(char* str)
+//{
+//	int count = 0;
+//	while (*str != '\0')
+//	{
+//		count++;
+//		str++;
+//	}
+//	return count;
+//}
+//
+//void reverse_string(char* str)
+//{
+//	int left = 0;
+//	int right = my_strlen(str) - 1;
+//
+//	while (left < right)
+//	{
+//		char tmp = str[left];//str[left] = *(str+left);
+//		str[left] = str[right];//str[right] = *(str+right);
+//		str[right] = tmp;
+//		left++;
+//		right--;
+//	}
+//}
+//
+//int main()
+//{
+//	char arr[] = "abcdef";
+//	reverse_string(arr);//数组名arr是数组arr首元素的地址
+//
+//	printf("%s", arr);//fedcba
+//
+//	return 0;
+//}
+
+//递归
+//int my_strlen(char* str)
+//{
+//	int count = 0;
+//	while (*str != '\0')
+//	{
+//		count++;
+//		str++;
+//	}
+//	return count;
+//}
+//
+//void reverse_string(char* str)//此步骤画图解析在：有道云笔记：5.函数递归
+//{
+//	char tmp = *str;//1
+//	int len = my_strlen(str);
+//	*str = *(str + len - 1);//2
+//	*(str + len - 1) = '\0';//3
+//	//判断条件
+//	if (my_strlen(str + 1) >= 2)
+//	{
+//		reverse_string(str + 1);//4
+//	}
+//	*(str + len - 1) = tmp;//5
+//}
+//
+//int main()
+//{
+//	char arr[] = "abcdef";
+//	reverse_string(arr);//数组名arr是数组arr首元素的地址
+//
+//	printf("%s\n", arr);//fedcba
+//
+//	return 0;
+//}
+
+
+//计算一个数的每位之和（递归实现）
+//int DigitSum(int n)
+//{
+//	if (n > 9)
+//	{
+//		return DigitSum(n / 10) + n % 10;
+//	}
+//	else
+//	{
+//		return n;
+//	}
+//}
+//
+//int main()
+//{
+//	int num = 1729;
+//	int sum = DigitSum(num);
+//
+//	printf("%d\n", sum);
+//
+//	return 0;
+//}
+
+
+
+//编写一个函数实现n的k次方，使用递归实现。
+//double my_pow(int n, int k)
+//{
+//	if (k == 0)
+//	{
+//		return 1;
+//	}
+//	else if(k > 0)
+//	{
+//		return n * my_pow(n, k - 1);
+//	}
+//	else
+//	{
+//		return 1.0 / (my_pow(n, -k));
+//	}
+//}
+//
+//int main()
+//{
+//	int n = 0;
+//	int k = 0;
+//	scanf("%d %d", &n, &k);
+//	double ret = my_pow(n, k);
+//	printf("%lf", ret);
+//
+//	return 0;
+//}
+
