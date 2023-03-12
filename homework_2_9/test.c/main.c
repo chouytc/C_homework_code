@@ -1029,3 +1029,285 @@
 //	return 0;
 //}
 
+
+//创建一个整形数组，完成对数组的操作
+//
+//实现函数init() 初始化数组为全0
+//实现print()  打印数组的每个元素
+//实现reverse()  函数完成数组元素的逆置。
+//要求：自己设计以上函数的参数，返回值。
+//void init(int arr[], int sz, int set)
+//{
+//	int i = 0;
+//	for (i = 0; i < sz; i++)
+//	{
+//		arr[i] = set;
+//	}
+//}
+//
+//void print(int arr[], int sz)
+//{
+//	int i = 0;
+//	for (i = 0; i < sz; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//}
+//
+//void reverse(int arr[], int sz)
+//{
+//	int left = 0;
+//	int right = sz - 1;
+//	while (left < right)
+//	{
+//		int temp = arr[left];
+//		arr[left] = arr[right];
+//		arr[right] = temp;
+//		left++;
+//		right--;
+//	}
+//}
+//
+//int main()
+//{
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	reverse(arr, sz);//数组逆置
+//	print(arr, sz);//打印数组
+//	init(arr, sz, 0);//数组初始化
+//
+//	return 0;
+//}
+
+
+//将数组A中的内容和数组B中的内容进行交换。（数组一样大）
+//void print(int arr[], int sz)
+//{
+//	int i = 0;
+//	for (i = 0; i < sz; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//}
+//
+//void swap(int arr1[], int arr2[], int sz1, int sz2)
+//{
+//	int i = 0;
+//	for (i = 0; i < sz1; i++)
+//	{
+//		int temp = arr1[i];
+//		arr1[i] = arr2[i];
+//		arr2[i] = temp;
+//	}
+//}
+//
+//int main()
+//{
+//	int arr1[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int arr2[10] = { 11,12,13,14,15,16,17,18,19,20 };
+//	int sz1 = sizeof(arr1) / sizeof(arr1[0]);
+//	int sz2 = sizeof(arr2) / sizeof(arr2[0]);
+//	printf("交换前\n");
+//	print(arr1, sz1);
+//	printf("\n");
+//	print(arr2, sz2);
+//
+//
+//	swap(arr1, arr2, sz1, sz2);
+//	printf("\n");
+//	printf("交换后\n");
+//	print(arr1, sz1);
+//	printf("\n");
+//	print(arr2, sz2);
+//
+//	return 0;
+//}
+
+
+////实现一个对整形数组的冒泡排序
+//void BubbleSort(int arr[], int sz)
+//{
+//	int i = 0;
+//	int j = 0;
+//	for (i = 0; i < sz - 1; i++)
+//	{
+//		for (j = 0; j < sz - 1 - i; j++)
+//		{
+//			if (arr[j] > arr[j + 1])
+//			{
+//				int temp = arr[j];
+//				arr[j] = arr[j + 1];
+//				arr[j + 1] = temp;
+//			}
+//		}
+//	}
+//}
+//int main()
+//{
+//	int arr[] = { 1,23,456,13,9,123,65,2,609,235,345,730 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	BubbleSort(arr, sz);
+//	printf("Sorted arr:\n");
+//	for (int i = 0; i < sz; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//
+//	return 0;
+//}
+
+
+//#include <stdio.h>
+//int main()
+//{
+//	int a, b, c;
+//	a = 5;
+//	c = ++a;
+//	b = ++c, c++, ++a, a++;
+//	b += a++ + c;
+//	printf("a = %d b = %d c = %d\n:", a, b, c);
+//	return 0;
+//}
+
+
+//编程实现：两个int（32位）整数m和n的二进制表达中，有多少个位(bit)不同？
+//输入例子 :
+//1999 2299
+//输出例子 : 7
+//int dif_bits(int m, int n)
+//{
+//	int x = m ^ n;
+//	int i = 0;
+//	int count = 0;
+//	for (i = 0; i < 31; i++)
+//	{
+//		if (x >> i & 1 == 1)
+//		{
+//			count++;
+//		}
+//	}
+//	return count;
+//}
+//int main()
+//{
+//	int m = 0;
+//	int n = 0;
+//	scanf("%d %d", &m, &n);
+//	dif_bits(m, n);
+//
+//	printf("%d\n", dif_bits(m, n));
+//
+//	return 0;
+//}
+
+
+//写一个函数返回参数二进制中 1 的个数。
+//比如： 15    0000 1111    4 个 1
+//int main()
+//{
+//	int n = 0;
+//	int count = 0;
+//	int i = 0;
+//	scanf("%d", &n);
+//	for (i = 0; i < 32; i++)
+//	{
+//		if (n >> i & 1 == 1)
+//			count++;
+//	}
+//	printf("%d\n", count);
+//
+//	return 0;
+//}
+
+
+//不允许创建临时变量，交换两个整数的内容
+//int main()
+//{
+//	int m = 0;
+//	int n = 0;
+//	scanf("%d %d", &m, &n);
+//	printf("交换前：%d %d\n", m, n);
+//	m = m ^ n;
+//	n = m ^ n;
+//	m = m ^ n;
+//	printf("交换后：%d %d\n", m, n);
+//
+//	return 0;
+//}
+
+
+//获取一个整数二进制序列中所有的偶数位和奇数位，分别打印出二进制序列
+//void printArray(int* arr, int sz)
+//{
+//	int i = 0;
+//	for (i = 0; i < sz; i++)
+//	{
+//		printf("%d ", *(arr + i));
+//	}
+//}
+//
+//int main()
+//{
+//	int arr[] = { 1,2,4,7,23,5,46,13,567,2 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	printArray(arr, sz);
+//
+//	return 0;
+//}
+
+
+//求Sn = a + aa + aaa + aaaa + aaaaa的前5项之和，其中a是一个数字，
+//例如：2 + 22 + 222 + 2222 + 22222
+
+//int main()
+//{
+//	int a = 0;
+//	int n = 0;
+//	int sum = 0;
+//	int temp = 0;
+//
+//	scanf("%d%d", &a, &n);
+//	for (int i = 0; i < n; i++)
+//	{
+//		temp = temp * 10 + a;
+//		sum = sum + temp;
+//	}
+//	printf("%d", sum);
+//
+//	return 0;
+//}
+
+
+//求出0～100000之间的所有“水仙花数”并输出。
+//“水仙花数”是指一个n位数，其各位数字的n次方之和确好等于该数本身
+//如 : 153＝1 ^ 3＋5 ^ 3＋3 ^ 3，则153是一个“水仙花数”。
+//#include <math.h>
+//int main()
+//{
+//	int i = 0;
+//	for (i = 0; i <= 100000; i++)
+//	{
+//		int temp = i;
+//		int count = 0;
+//		int sum = 0;
+//		while (temp != 0)
+//		{
+//			count++;
+//			temp /= 10;
+//		}
+//		temp = i;
+//		while (temp != 0)
+//		{
+//			sum += pow(temp % 10, count);
+//			temp /= 10;
+//		}
+//		if (sum == i)
+//		{
+//			printf("%d ", i);
+//		}
+//	}
+//
+//	return 0;
+//}
+
+
