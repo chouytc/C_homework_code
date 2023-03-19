@@ -1,0 +1,4 @@
+﻿  test.c
+C:\code\C_homework_code\homework_3_18\homework_3_18\test.c(213,2): warning C4013: “gets”未定义；假设外部返回 int
+C:\code\C_homework_code\homework_3_18\homework_3_18\test.c(217,12): warning C4013: “strlen”未定义；假设外部返回 int
+  homework_3_18.vcxproj -> C:\code\C_homework_code\homework_3_18\Debug\homework_3_18.exe
